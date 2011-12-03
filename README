@@ -1,0 +1,30 @@
+FeedFilter
+
+Rudimentary RSS 2.0 feed filter implementation.
+
+FeedFilter acts like a caching proxy between your RSS client and a
+remote RSS feed of your choice.
+
+The configurable filter is a list of regular expressions. Each regular
+expression is applied on title and description of each RSS entry. If
+none of the regular expressions matches, the respective entry is
+discarded.
+
+FeedFilter supports the HTTP Etag header for conditional requests.
+RSS feeds will be cached in /tmp/feedfilter_*.
+
+Requirements:
+
+ * Webserver with PHP (tested with PHP 5.3)
+ * PHP PECL HTTP Extension (pecl install pecl_http)
+
+Installation:
+
+ * Copy this directory to a htdocs-subdirectory of your webserver.
+ * Edit index.php. Change the $url variable to the URL of the RSS
+   feed you want to use. Edit the regular expressions.
+
+-- 
+
+by Sebastian Volland
+
