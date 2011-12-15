@@ -20,7 +20,7 @@ class FeedFilterRequest
 
 	public function handleRequest()
 	{
-		$cacheFile = '/tmp/feedfilter_' . md5($this->url) . '.tmp';
+		$cacheFile = sys_get_temp_dir() . '/feedfilter_' . md5($this->url) . '.tmp';
 
 		$allowCaching = true;
 
